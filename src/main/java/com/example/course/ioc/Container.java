@@ -51,27 +51,42 @@ public class Container {
                     if(a.annotationType() == Autowired.class) {
                         Class<?> type = f.getType();
                         Object injectInstance = objectFactory.get(type.getSimpleName());
-                        if(injectInstance == null){
-                            try{
-                                if(a.annotationType() != Qualifier.class){
-                                    Exception exception = new Exception();
-                                }
-                                Class<?> name = f.getType();
-                                injectInstance = objectFactory.get(name.getSimpleName());
-                                f.setAccessible(true);
-                                f.set(curInstance, injectInstance);
-
-                            }catch(Exception exception){
-                                throw exception;
-                            }
-                        }
                         f.setAccessible(true);
                         f.set(curInstance, injectInstance);
                     }
                 }
             }
-
         }
+//        for(Class<?> clazz: classes) {
+//            Field[] fields = clazz.getDeclaredFields();
+//            Object curInstance = objectFactory.get(clazz.getSimpleName());
+//            for(Field f: fields) {
+//                Annotation[] annotations = f.getAnnotations();
+//                for(Annotation a: annotations) {
+//                    if(a.annotationType() == Autowired.class) {
+//                        Class<?> type = f.getType();
+//                        Object injectInstance = objectFactory.get(type.getSimpleName());
+//                        if(injectInstance == null){
+//                            try{
+//                                if(a.annotationType() != Qualifier.class){
+//                                    Exception exception = new Exception();
+//                                }
+//                                Class<?> name = f.getType();
+//                                injectInstance = objectFactory.get(name.getSimpleName());
+//                                f.setAccessible(true);
+//                                f.set(curInstance, injectInstance);
+//
+//                            }catch(Exception exception){
+//                                throw exception;
+//                            }
+//                        }
+//                        f.setAccessible(true);
+//                        f.set(curInstance, injectInstance);
+//                    }
+//                }
+//            }
+//
+//        }
         return true;
     }
 }
