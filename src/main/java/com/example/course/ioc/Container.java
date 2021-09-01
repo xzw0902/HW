@@ -74,72 +74,72 @@ public class Container {
         }
         return true;
     }
+}
+
+
+//@Component
+//interface StudentRegisterService{
 //
-
-}
-@Component
-interface StudentRegisterService{
-
-}
-
-@Component
-class StudentRegisterServiceImplement1 implements StudentRegisterService{
-    @Override
-    public String toString(){
-        return "this is student register service implementation1 instance:" + super.toString() + "\n";
-    }
-}
-
-@Component
-class StudentRegisterServiceImplement2 implements StudentRegisterService{
-    @Override
-    public String toString(){
-        return "this is student register service implementation2 instance:" + super.toString() + "\n";
-    }
-}
-
-@Component
-class StudentApplication {
-    @Autowired
-    @Qualifier(name = "StudentRegisterServiceImplement1")
-    StudentRegisterService studentRegisterServiceImpl1;
-
-    @Autowired
-    @Qualifier(name = "StudentRegisterServiceImplement2")
-    StudentRegisterService studentRegisterServiceImpl2;
-
-    @Override
-    public String toString(){
-        return "StudentApplication{\n" +
-                "studentRegisterService1 = " + studentRegisterServiceImpl1 +
-                "\n" +
-                "studentRegisterService2 + " + studentRegisterServiceImpl2 +
-                "}\n";
-    }
-}
-
-@Component
-
-class Starter {
-
-    @Autowired
-    private static StudentApplication studentApplication;
-
-    @Autowired
-    @Qualifier(name = "StudentRegisterServiceImplement1 ")
-    private static StudentRegisterService studentRegisterServiceImpl1;
-
-    @Qualifier(name = "StudentRegisterServiceImplement2")
-    @Autowired
-    private static StudentRegisterService studentRegisterServiceImpl2;
-
-    public static void main(String [] args) throws Exception {
-        Container.start();
-        System.out.println(studentApplication);
-        System.out.println(studentRegisterServiceImpl1);
-        System.out.println(studentRegisterServiceImpl2);
-    }
-}
+//}
+//
+//@Component
+//class StudentRegisterServiceImplement1 implements StudentRegisterService{
+//    @Override
+//    public String toString(){
+//        return "this is student register service implementation1 instance:" + super.toString() + "\n";
+//    }
+//}
+//
+//@Component
+//class StudentRegisterServiceImplement2 implements StudentRegisterService{
+//    @Override
+//    public String toString(){
+//        return "this is student register service implementation2 instance:" + super.toString() + "\n";
+//    }
+//}
+//
+//@Component
+//class StudentApplication {
+//    @Autowired
+//    @Qualifier(name = "StudentRegisterServiceImplement1")
+//    StudentRegisterService studentRegisterServiceImpl1;
+//
+//    @Autowired
+//    @Qualifier(name = "StudentRegisterServiceImplement2")
+//    StudentRegisterService studentRegisterServiceImpl2;
+//
+//    @Override
+//    public String toString(){
+//        return "StudentApplication{\n" +
+//                "studentRegisterService1 = " + studentRegisterServiceImpl1 +
+//                "\n" +
+//                "studentRegisterService2 + " + studentRegisterServiceImpl2 +
+//                "}\n";
+//    }
+//}
+//
+//@Component
+//
+//class Starter {
+//
+//    @Autowired
+//    private static StudentApplication studentApplication;
+//
+//    @Autowired
+//    @Qualifier(name = "StudentRegisterServiceImplement1 ")
+//    private static StudentRegisterService studentRegisterServiceImpl1;
+//
+//    @Qualifier(name = "StudentRegisterServiceImplement2")
+//    @Autowired
+//    private static StudentRegisterService studentRegisterServiceImpl2;
+//
+//    public static void main(String [] args) throws Exception {
+//        Container.start();
+//        System.out.println(studentApplication);
+//        System.out.println(studentRegisterServiceImpl1);
+//        System.out.println(studentRegisterServiceImpl2);
+//    }
+//}
 /**
  *  1. add interface
  *  2. all components need to impl interface
