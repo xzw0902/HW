@@ -22,3 +22,11 @@ class Starter {
         System.out.println(studentRegisterServiceImpl2);
     }
 }
+
+//        result:
+//        StudentApplication{
+//        studentRegisterService1 = null
+//        studentRegisterService2 + null}
+//
+//        null
+//        null
